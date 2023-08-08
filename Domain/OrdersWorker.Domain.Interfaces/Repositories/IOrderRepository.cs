@@ -2,7 +2,7 @@
 
 namespace OrdersWorker.Domain.Interfaces.Repositories;
 
-public interface IOrdersRepository : IBaseCrudRepository<Order>
+public interface IOrderRepository : IBaseCrudRepository<Order, Guid>
 {
     
 }

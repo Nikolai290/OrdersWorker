@@ -1,5 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using WebApp.Dtos;
+﻿using System.Text.Json;
+using Microsoft.AspNetCore.Mvc;
+using OrderWorker.Business.Interfaces.Services;
 
 namespace WebApp.Controllers;
 
@@ -7,21 +8,28 @@ namespace WebApp.Controllers;
 [Route("api/[controller]s")]
 public class OrderController : ControllerBase
 {
-    
-    [HttpPost("{systemType}")]
+    private readonly IOrderService _orderService;
 
-    public async Task<ActionResult> AddOrderAsync([FromRoute] string systemType, [FromBody] AddOrderDto dto, CancellationToken cancellationToken = default)
+    public OrderController(IOrderService orderService)
+    {
+        _orderService = orderService;
+    }
+
+
+    [HttpPost("{systemType}")]
+    public async Task<ActionResult> AddOrderAsync(
+        [FromRoute] string systemType,
+        [FromBody] JsonDocument requestBodyJson,
+        CancellationToken cancellationToken = default)
     {
         try
         {
-            
+            await _orderService.AddOrderAsync(systemType, requestBodyJson, cancellationToken);
             return Ok();
         }
         catch (Exception e)
         {
             return BadRequest(e);
         }
-        
     }
-    
 }

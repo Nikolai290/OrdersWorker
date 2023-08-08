@@ -1,6 +1,5 @@
 ﻿namespace OrdersWorker.Core.DbEntities;
 
-public record BaseDbEntity
-{
-    public int Id { get; init; }
-}
+public record BaseDbEntity(Guid Id) : BaseDbEntity<Guid>(Id); 
+
+public record BaseDbEntity<TId>(TId Id);

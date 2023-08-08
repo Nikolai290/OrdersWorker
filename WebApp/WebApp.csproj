@@ -8,7 +8,9 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="EFCore.NamingConventions" Version="7.0.2" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.5" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0-preview.6.23329.4" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
     </ItemGroup>
 
@@ -16,6 +18,21 @@
       <Content Include="..\.dockerignore">
         <Link>.dockerignore</Link>
       </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="OrdersWorker.Business.Talabat.Handler.dll">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="OrdersWorker.Business.Uber.Handler.dll">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Business\OrdersWorker.Business.Implements\OrdersWorker.Business.Implements.csproj" />
+      <ProjectReference Include="..\Domain\OrdersWorker.Domain.Implements\OrdersWorker.Domain.Implements.csproj" />
+      <ProjectReference Include="..\Domain\OrdersWorker.Domain.Interfaces\OrdersWorker.Domain.Interfaces.csproj" />
     </ItemGroup>
 
 </Project>
