@@ -30,7 +30,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{899ACC33
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{180EF2D1-7C12-4B70-90D5-F0FFAE26782A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrdersWorker.Business.Talabat.Handler", "Tests\Business\OrdersWorker.Business.Talabat.Handler\OrdersWorker.Business.Talabat.Handler.csproj", "{D3C14125-C087-46CD-A25E-69E6775D0F24}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrdersWorker.Business.Talabat.Handler.Tests", "Tests\Business\OrdersWorker.Business.Talabat.Handler.Tests\OrdersWorker.Business.Talabat.Handler.Tests.csproj", "{D3C14125-C087-46CD-A25E-69E6775D0F24}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

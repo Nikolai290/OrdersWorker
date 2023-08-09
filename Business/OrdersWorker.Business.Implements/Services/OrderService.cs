@@ -25,6 +25,7 @@ public class OrderService : IOrderService
             orderNumber,
             requestBodyJson.RootElement.GetRawText(),
             DateTimeOffset.Parse(createdAt));
+        var json = JsonSerializer.Serialize(order);
         
         var result = await _orderRepository.CreateAsync(order, cancellationToken);
     }

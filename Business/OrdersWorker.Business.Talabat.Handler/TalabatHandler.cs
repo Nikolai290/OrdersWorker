@@ -18,8 +18,31 @@ public class TalabatHandler : IOrderHandler
     {
         var success = true;
         result = "";
+        var options = new JsonSerializerOptions()
+        {
+             
+        }
+
         var dto = JsonSerializer.Deserialize<OrderDto>(source);
-        
+        // var products = new List<ProductDto>(dto.Products.Length);
+        // foreach (var dtoProduct in dto.Products)
+        // {
+        //     decimal.Parse(dtoProduct.PaidPrice);
+        //     var value = decimal.Parse(dtoProduct.PaidPrice);
+        //     var prod = dtoProduct with
+        //     {
+        //         PaidPrice = $"{(value > 0? -value : value)}"
+        //     };
+        //     products.Add(prod);
+        // }
+
+        // var resultDto = dto with
+        // {
+        //     Products = products.ToArray()
+        // };
+
+        // result = JsonSerializer.Serialize(resultDto);
         return success;
+
     }
 }
