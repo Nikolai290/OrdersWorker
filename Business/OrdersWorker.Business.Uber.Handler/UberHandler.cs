@@ -14,6 +14,6 @@ public class UberHandler : IOrderHandler
 
     private bool Handle(string source, out string result)
     {
-        throw new NotImplementedException("uber выбрасывает исключение.");
+        throw new NotImplementedException("UBER THROWN EXCEPTION.");
     }
 }

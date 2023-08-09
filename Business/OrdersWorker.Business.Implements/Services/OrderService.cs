@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
 using OrdersWorker.Core.DbEntities;
+using OrdersWorker.Core.Enums;
 using OrdersWorker.Domain.Interfaces.Repositories;
-using OrderWorker.Business.Implements.Handler;
 using OrderWorker.Business.Interfaces.Services;
 
 namespace OrdersWorker.Business.Implements.Services;
@@ -24,8 +24,9 @@ public class OrderService : IOrderService
             systemType,
             orderNumber,
             requestBodyJson.RootElement.GetRawText(),
-            DateTimeOffset.Parse(createdAt));
-        var json = JsonSerializer.Serialize(order);
+            DateTimeOffset.Parse(createdAt),
+            null,
+            OrderStatus.NewOrder);
         
         var result = await _orderRepository.CreateAsync(order, cancellationToken);
     }

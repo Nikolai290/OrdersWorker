@@ -24,13 +24,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrdersWorker.Business.Talab
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrdersWorker.Business.Uber.Handler", "Business\OrdersWorker.Business.Uber.Handler\OrdersWorker.Business.Uber.Handler.csproj", "{6C662270-F5B4-4AE5-815C-ED44747AA348}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrdersWorker.Business.Zomato.Handler", "OrdersWorker.Business.Zomato.Handler\OrdersWorker.Business.Zomato.Handler.csproj", "{4DA69253-F6FD-4035-8D8D-D58E88506B16}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{899ACC33-F06B-4389-9AC0-A386D63D21EF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{180EF2D1-7C12-4B70-90D5-F0FFAE26782A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrdersWorker.Business.Talabat.Handler.Tests", "Tests\Business\OrdersWorker.Business.Talabat.Handler.Tests\OrdersWorker.Business.Talabat.Handler.Tests.csproj", "{D3C14125-C087-46CD-A25E-69E6775D0F24}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrdersWorker.Business.Handler.Tests", "Tests\Business\OrdersWorker.Business.Handler.Tests\OrdersWorker.Business.Handler.Tests.csproj", "{D3C14125-C087-46CD-A25E-69E6775D0F24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrdersWorker.Business.Zomato.Handler", "Business\OrdersWorker.Business.Zomato.Handler\OrdersWorker.Business.Zomato.Handler.csproj", "{757CBE9B-03DC-42DF-825D-C18E6B1CFA48}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -74,14 +74,14 @@ Global
 		{6C662270-F5B4-4AE5-815C-ED44747AA348}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C662270-F5B4-4AE5-815C-ED44747AA348}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C662270-F5B4-4AE5-815C-ED44747AA348}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4DA69253-F6FD-4035-8D8D-D58E88506B16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4DA69253-F6FD-4035-8D8D-D58E88506B16}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4DA69253-F6FD-4035-8D8D-D58E88506B16}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4DA69253-F6FD-4035-8D8D-D58E88506B16}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D3C14125-C087-46CD-A25E-69E6775D0F24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D3C14125-C087-46CD-A25E-69E6775D0F24}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3C14125-C087-46CD-A25E-69E6775D0F24}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3C14125-C087-46CD-A25E-69E6775D0F24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{757CBE9B-03DC-42DF-825D-C18E6B1CFA48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{757CBE9B-03DC-42DF-825D-C18E6B1CFA48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{757CBE9B-03DC-42DF-825D-C18E6B1CFA48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{757CBE9B-03DC-42DF-825D-C18E6B1CFA48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A8D6BA38-AE07-4646-AF10-94F257AF551B} = {B13EF241-B964-4D91-8D88-9AA463E967F7}
@@ -92,8 +92,8 @@ Global
 		{6303FA28-43F2-4FFD-89F4-CB1E32AF2254} = {BE07EA3A-C8CC-4651-9135-D5AC46F65382}
 		{EED5618B-C15D-432D-8A75-9A135F7BD071} = {BE07EA3A-C8CC-4651-9135-D5AC46F65382}
 		{6C662270-F5B4-4AE5-815C-ED44747AA348} = {BE07EA3A-C8CC-4651-9135-D5AC46F65382}
-		{4DA69253-F6FD-4035-8D8D-D58E88506B16} = {BE07EA3A-C8CC-4651-9135-D5AC46F65382}
 		{180EF2D1-7C12-4B70-90D5-F0FFAE26782A} = {899ACC33-F06B-4389-9AC0-A386D63D21EF}
 		{D3C14125-C087-46CD-A25E-69E6775D0F24} = {180EF2D1-7C12-4B70-90D5-F0FFAE26782A}
+		{757CBE9B-03DC-42DF-825D-C18E6B1CFA48} = {BE07EA3A-C8CC-4651-9135-D5AC46F65382}
 	EndGlobalSection
 EndGlobal

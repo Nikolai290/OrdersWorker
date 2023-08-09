@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using OrdersWorker.Business.Implements.BackgroundServices;
+using OrdersWorker.Business.Implements.FileLog;
 using OrdersWorker.Domain.Implements;
 using OrderWorker.Business.Implements.Handler;
 using WebApp.Extensions;
@@ -17,7 +18,10 @@ builder.Services.AddDbContext<MsSqlContext>(options => options
     .UseSnakeCaseNamingConvention()
     .UseSqlServer(connectionString));
 builder.Services.AddHostedService<OrderHandlerBackgroundService>();
-HandlersLoader.LoadHandlers();
+builder.Services.AddLogging(configure => configure.AddProvider(new FileLoggerProvider()));
+var logger = new FileLogger();
+
+HandlersLoader.LoadHandlers(logger);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

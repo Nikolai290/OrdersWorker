@@ -27,6 +27,9 @@
       <None Update="OrdersWorker.Business.Uber.Handler.dll">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
+      <None Update="OrdersWorker.Business.Zomato.Handler.dll">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
     <ItemGroup>

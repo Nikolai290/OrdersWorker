@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Core\OrdersWorker.Core\OrdersWorker.Core.csproj" />
+      <ProjectReference Include="..\OrdersWorker.Business.DataTransferObjects\OrdersWorker.Business.DataTransferObjects.csproj" />
+      <ProjectReference Include="..\OrdersWorker.Business.Interfaces\OrdersWorker.Business.Interfaces.csproj" />
+    </ItemGroup>
+
+</Project>

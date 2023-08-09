@@ -12,4 +12,8 @@
       <ProjectReference Include="..\OrdersWorker.Business.Interfaces\OrdersWorker.Business.Interfaces.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    </ItemGroup>
+
 </Project>

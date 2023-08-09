@@ -5,10 +5,10 @@ using OrdersWorker.Core.DbEntities;
 using OrderWorker.Business.Interfaces.Attributes;
 using OrderWorker.Business.Interfaces.Handler;
 
-namespace OrdersWorker.Business.Talabat.Handler;
+namespace OrdersWorker.Business.Zomato.Handler;
 
-[SystemType("talabat")]
-public class TalabatHandler : IOrderHandler
+[SystemType("zomato")]
+public class ZomatoHandler : IOrderHandler
 {
     public void Run(Order order)
     {
@@ -24,10 +24,11 @@ public class TalabatHandler : IOrderHandler
         foreach (var dtoProduct in dto.Products)
         {
             decimal.Parse(dtoProduct.PaidPrice);
-            var value = decimal.Parse(dtoProduct.PaidPrice);
+            var paidPrice = decimal.Parse(dtoProduct.PaidPrice);
+            var quantity = int.Parse(dtoProduct.Quantity);
             var prod = dtoProduct with
             {
-                PaidPrice = $"{(value > 0? -value : value)}"
+                UnitPrice = $"{(paidPrice /quantity)}"
             };
             products.Add(prod);
         }
@@ -43,6 +44,5 @@ public class TalabatHandler : IOrderHandler
 
         result = System.Text.Json.JsonSerializer.Serialize(resultDto, options);
         return success;
-
     }
 }

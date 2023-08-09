@@ -13,6 +13,7 @@
     <ItemGroup>
         <PackageReference Include="Codinators.XunitHelpers" Version="3.0.1" />
         <PackageReference Include="FluentAssertions" Version="6.11.0" />
+        <PackageReference Include="JsonNet.ContractResolvers" Version="2.0.0" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
         <PackageReference Include="xunit" Version="2.4.2" />
         <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
@@ -27,6 +28,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\..\Business\OrdersWorker.Business.Talabat.Handler\OrdersWorker.Business.Talabat.Handler.csproj" />
+      <ProjectReference Include="..\..\..\Business\OrdersWorker.Business.Zomato.Handler\OrdersWorker.Business.Zomato.Handler.csproj" />
       <ProjectReference Include="..\..\..\Core\OrdersWorker.Core\OrdersWorker.Core.csproj" />
     </ItemGroup>
 

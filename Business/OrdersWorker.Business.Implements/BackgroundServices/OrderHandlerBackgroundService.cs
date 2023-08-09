@@ -28,7 +28,6 @@ public class OrderHandlerBackgroundService : BackgroundService, IOrderHandlerBac
     public void DoWork(object? state)
     {
         var handlers = HandlersLoader.Handlers;
-        Console.WriteLine("OrderHandlerBackgroundService works!");
         var modified = new List<Order>();
         using (var scope = _services.CreateScope())
         {
@@ -42,7 +41,7 @@ public class OrderHandlerBackgroundService : BackgroundService, IOrderHandlerBac
                 {
                     if (!HandlersLoader.Handlers.ContainsKey(order.SystemType))
                     {
-                        throw new ArgumentException("Нет обработчика для этой системы.", order.SystemType);
+                        throw new ArgumentException("No handler for this system.", order.SystemType);
                     }
                     var handler = handlers[order.SystemType];
                     modified.Add(order);
@@ -55,7 +54,6 @@ public class OrderHandlerBackgroundService : BackgroundService, IOrderHandlerBac
             }
 
             if (modified.Any()) orderRepository.UpdateRangeAsync(modified, default).GetAwaiter().GetResult();
-
         }
     }
 
