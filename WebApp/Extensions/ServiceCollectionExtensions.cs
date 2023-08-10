@@ -10,7 +10,6 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection AddRepositories(this IServiceCollection services)
     {
         services.AddScoped<IOrderRepository, OrderRepository>();
-        services.AddScoped<ISystemTypeRepository, SystemTypeRepository>();
         return services;
     }
     

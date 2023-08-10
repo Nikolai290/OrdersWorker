@@ -1,6 +1,4 @@
-﻿using System.Linq.Expressions;
-
-namespace OrdersWorker.Core.Enums;
+﻿namespace OrdersWorker.Core.Enums;
 
 public enum OrderStatus : byte
 {

@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using OrdersWorker.Core.Enums;
+﻿using OrdersWorker.Core.Enums;
 
 namespace OrdersWorker.Core.DbEntities;
 

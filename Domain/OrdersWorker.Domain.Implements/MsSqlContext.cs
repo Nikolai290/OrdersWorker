@@ -6,7 +6,6 @@ namespace OrdersWorker.Domain.Implements;
 public class MsSqlContext : DbContext
 {
     public DbSet<Order> Orders { get; set; }
-    public DbSet<SystemType> SystemTypes { get; set; }
 
     public MsSqlContext(DbContextOptions<MsSqlContext> options) : base(options)
     {
