@@ -13,7 +13,7 @@ public class OrderHandlerBackgroundService : BackgroundService, IOrderHandlerBac
 {
     private Timer? _timer = null;
     private readonly IServiceProvider _services;
-    private readonly List<string> _noHandlers = new ();
+    private static List<string> NO_HANDLERS = new ();
 
     public OrderHandlerBackgroundService(IServiceProvider services)
     {
@@ -38,12 +38,12 @@ public class OrderHandlerBackgroundService : BackgroundService, IOrderHandlerBac
             foreach (var order in orders)
             {
                 if (order.OrderStatus == OrderStatus.Processed ||
-                    _noHandlers.Contains(order.SystemType)) continue;
+                    NO_HANDLERS.Contains(order.SystemType)) continue;
                 try
                 {
                     if (!HandlersLoader.Handlers.ContainsKey(order.SystemType))
                     {
-                        _noHandlers.Add(order.SystemType);
+                        NO_HANDLERS.Add(order.SystemType);
                         throw new ArgumentException("No handler for this system.", order.SystemType);
                     }
                     var handler = handlers[order.SystemType];
