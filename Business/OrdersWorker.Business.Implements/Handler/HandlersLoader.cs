@@ -26,7 +26,7 @@ public class HandlersLoader
                     logger.LogInformation($"Handler {systemType}");
                     if (systemType is null)
                     {
-                        throw new Exception("No systemType provided. Untrusted plugin!");
+                        throw new Exception("No systemType provided. Untrusted handler!");
                     }
 
                     var constructors = type.GetConstructors();
