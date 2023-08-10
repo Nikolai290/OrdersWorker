@@ -15,7 +15,7 @@
 # Include dlls if they're in the CommonReferences directory
 !*CommonReferences/*.dll
 # Include Handler.dll
-!*/.*.Handler.dll
+!./WebApp/*.Handler.dll
 ####################
 # VS Upgrade stuff #
 ####################
