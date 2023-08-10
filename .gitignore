@@ -3,7 +3,7 @@
 ###################
 *.com
 *.class
-*.dll
+#*.dll
 *.exe
 *.pdb
 *.dll.config
@@ -70,7 +70,7 @@ packages
 NuGet.exe
 _[Ss]cripts
 *.exe
-*.dll
+#*.dll
 *.nupkg
 *.ncrunchsolution
 *.dot[Cc]over
@@ -84,4 +84,4 @@ _[Ss]cripts
 ######################
 appsettings.*.json
 # Include Handler.dll
-!./WebApp/*.Handler.dll
+#!./WebApp/*.Handler.dll
