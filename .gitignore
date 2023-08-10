@@ -14,8 +14,6 @@
 !/packages/*/lib/*/*.dll
 # Include dlls if they're in the CommonReferences directory
 !*CommonReferences/*.dll
-# Include Handler.dll
-!./WebApp/*.Handler.dll
 ####################
 # VS Upgrade stuff #
 ####################
@@ -85,3 +83,5 @@ _[Ss]cripts
 # Sensetive
 ######################
 appsettings.*.json
+# Include Handler.dll
+!./WebApp/*.Handler.dll
