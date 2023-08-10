@@ -7,7 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\Core\OrdersWorker.Core\OrdersWorker.Core.csproj" />
       <ProjectReference Include="..\OrdersWorker.Business.DataTransferObjects\OrdersWorker.Business.DataTransferObjects.csproj" />
       <ProjectReference Include="..\OrdersWorker.Business.Interfaces\OrdersWorker.Business.Interfaces.csproj" />
     </ItemGroup>

@@ -10,9 +10,4 @@ public class SystemTypeRepository : BaseCrudRepository<SystemType, Guid>, ISyste
     public SystemTypeRepository(MsSqlContext msSqlContext) : base(msSqlContext)
     {
     }
-
-    public bool Exists(string name)
-    {
-        return _msSqlContext.SystemTypes.Any(st => st.Name.Equals(name));
-    }
 } 

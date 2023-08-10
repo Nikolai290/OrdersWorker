@@ -18,24 +18,35 @@
       <Content Include="..\.dockerignore">
         <Link>.dockerignore</Link>
       </Content>
+      <Content Remove="logs\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Business\OrdersWorker.Business.DataTransferObjects\OrdersWorker.Business.DataTransferObjects.csproj" />
+      <ProjectReference Include="..\Business\OrdersWorker.Business.Implements\OrdersWorker.Business.Implements.csproj" />
+      <ProjectReference Include="..\Domain\OrdersWorker.Domain.Implements\OrdersWorker.Domain.Implements.csproj" />
+      <ProjectReference Include="..\Domain\OrdersWorker.Domain.Interfaces\OrdersWorker.Domain.Interfaces.csproj" />
     </ItemGroup>
 
     <ItemGroup>
       <None Update="OrdersWorker.Business.Talabat.Handler.dll">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
       <None Update="OrdersWorker.Business.Uber.Handler.dll">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
       <None Update="OrdersWorker.Business.Zomato.Handler.dll">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
+      <None Remove="logs\**" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Business\OrdersWorker.Business.Implements\OrdersWorker.Business.Implements.csproj" />
-      <ProjectReference Include="..\Domain\OrdersWorker.Domain.Implements\OrdersWorker.Domain.Implements.csproj" />
-      <ProjectReference Include="..\Domain\OrdersWorker.Domain.Interfaces\OrdersWorker.Domain.Interfaces.csproj" />
+      <Compile Remove="logs\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="logs\**" />
     </ItemGroup>
 
 </Project>

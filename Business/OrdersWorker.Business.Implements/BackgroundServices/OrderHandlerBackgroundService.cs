@@ -13,6 +13,7 @@ public class OrderHandlerBackgroundService : BackgroundService, IOrderHandlerBac
 {
     private Timer? _timer = null;
     private readonly IServiceProvider _services;
+    private readonly List<string> _noHandlers = new ();
 
     public OrderHandlerBackgroundService(IServiceProvider services)
     {
@@ -36,11 +37,13 @@ public class OrderHandlerBackgroundService : BackgroundService, IOrderHandlerBac
             var orders = orderRepository.GetAllAsync(default);
             foreach (var order in orders)
             {
-                if (order.OrderStatus != OrderStatus.NewOrder) continue;
+                if (order.OrderStatus == OrderStatus.Processed ||
+                    _noHandlers.Contains(order.SystemType)) continue;
                 try
                 {
                     if (!HandlersLoader.Handlers.ContainsKey(order.SystemType))
                     {
+                        _noHandlers.Add(order.SystemType);
                         throw new ArgumentException("No handler for this system.", order.SystemType);
                     }
                     var handler = handlers[order.SystemType];

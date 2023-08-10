@@ -5,7 +5,7 @@ using OrderWorker.Business.Interfaces.Services;
 namespace WebApp.Controllers;
 
 [ApiController]
-[Route("api/[controller]s")]
+[Route("api/[controller]")]
 public class OrderController : ControllerBase
 {
     private readonly IOrderService _orderService;

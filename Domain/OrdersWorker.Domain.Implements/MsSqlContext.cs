@@ -10,10 +10,7 @@ public class MsSqlContext : DbContext
 
     public MsSqlContext(DbContextOptions<MsSqlContext> options) : base(options)
     {
-        if (Database.EnsureCreated())
-        {
-            FirstInit().GetAwaiter();
-        }
+        Database.EnsureCreated();
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -21,15 +18,4 @@ public class MsSqlContext : DbContext
         modelBuilder.Entity<Order>().HasKey(d => d.Id);
     }
 
-    private async Task FirstInit()
-    {
-        var systemTypes = new List<SystemType>()
-        {
-            new(Guid.NewGuid(), "talabat"),
-            new(Guid.NewGuid(), "zomato"),
-            new(Guid.NewGuid(), "uber"),
-        };
-        SystemTypes.AddRange(systemTypes);
-        await SaveChangesAsync();
-    }
 }
